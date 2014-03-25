@@ -40,7 +40,7 @@ public class Door {
      */
     public void setStatus(String doorStatus) {
         // if doorStatus is not open, closed, or locked, return
-        if ( doorStatus.equals("open") || doorStatus.equals("locked") || doorStatus.equals("closed") ) { return; }
+        if ( !doorStatus.equals("open") || !doorStatus.equals("locked") || !doorStatus.equals("closed") ) { return; }
         // otherwise, set status as doorStatus
         this.status = doorStatus;
     }
@@ -52,7 +52,7 @@ public class Door {
      */
     public void setLocation(String doorLocation) {
         // if doorLocation is not driver or passenger, return
-        if ( doorLocation.equals("driver") || doorLocation.equals("passenger") ) { return; }
+        if ( !doorLocation.equals("driver") || !doorLocation.equals("passenger") ) { return; }
         // otherwise set location as doorLocation
         this.location = doorLocation;
     }
