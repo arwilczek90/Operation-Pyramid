@@ -16,6 +16,16 @@ public class Window {
     private int position;
 
     /**
+     * Constructor method
+     *
+     * @param   winLocation     The location of the window within the car.
+     */
+    public void Window( String winLocation ) {
+        this.location = winLocation;
+        this.position = 99;
+    }
+
+    /**
      * Returns the location class variable
      */
     public String getLocation() {
