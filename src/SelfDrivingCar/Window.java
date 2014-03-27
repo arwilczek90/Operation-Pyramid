@@ -8,6 +8,11 @@ public class Window {
     private String location;
     private int position;
 
+    public void Window(String location){
+        this.location = location;
+        position = 99;
+    }
+
     public String getLocation() {
         return location;
     }
