@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.StackPane;
@@ -29,14 +30,23 @@ public class Main extends Application {
         final Button button = new Button();
         button.setGraphic(new ImageView(buttonUnselected));
         button.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
-        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
+
+        button.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(MouseEvent t) {
+            public void handle(MouseEvent mouseEvent) {
                 System.out.println("click");
                 Image clicked = new Image(getClass().getResourceAsStream("/SelfDrivingCar/rounded_button_selected.png"));
                 button.setGraphic(new ImageView(clicked));
-           }
+            }
+        });
+        button.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("click");
+                Image clicked = new Image(getClass().getResourceAsStream("/SelfDrivingCar/rounded_button.png"));
+                button.setGraphic(new ImageView(clicked));
+            }
         });
 
 
