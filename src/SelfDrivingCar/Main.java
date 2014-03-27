@@ -23,35 +23,27 @@ public class Main extends Application {
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
 
-        Button btn = new Button();
-        btn.setText("I'm a button");
 
-        Image btnImage = new Image("/SelfDrivingCar/rounded_button.png");
-        ImageView iv = new ImageView();
-        iv.setImage(btnImage);
-        btn.setGraphic(iv);
 
-        imgButton iButton;
-        iButton = new imgButton();
-
-        Image imageDecline = new Image(getClass().getResourceAsStream("/SelfDrivingCar/rounded_button.png"));
-        final Button button5 = new Button();
-        button5.setGraphic(new ImageView(imageDecline));
-        button5.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
-        button5.setOnMouseClicked(new EventHandler<MouseEvent>() {
+        Image buttonUnselected = new Image(getClass().getResourceAsStream("/SelfDrivingCar/rounded_button.png"));
+        final Button button = new Button();
+        button.setGraphic(new ImageView(buttonUnselected));
+        button.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+        button.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
             @Override
             public void handle(MouseEvent t) {
                 System.out.println("click");
                 Image clicked = new Image(getClass().getResourceAsStream("/SelfDrivingCar/rounded_button_selected.png"));
-                button5.setGraphic(new ImageView(clicked));
+                button.setGraphic(new ImageView(clicked));
            }
         });
 
 
 
+
         StackPane root = new StackPane();
-        root.getChildren().add(button5);
+        root.getChildren().add(button);
         root.setId("pane");
 
         Scene scene = new Scene(root,1280,768);
