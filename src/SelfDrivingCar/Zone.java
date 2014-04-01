@@ -10,6 +10,7 @@ public class Zone {
     Seat seat;
     ClimateControls climate;
     Display display;
+    User user;
 
     public Zone(boolean isDriver){
         isDriver = this.isDriver;
@@ -18,6 +19,7 @@ public class Zone {
         seat = new Seat();
         climate = new ClimateControls();
         display = new Display();
+        user = new User("Default");
 
     }
 
@@ -45,6 +47,10 @@ public class Zone {
         return climate.getInTemp();
     }
 
+    public User getUser() {
+        return user;
+    }
+
     public void setWindowLocation(String location){
         window.setLocation(location);
     }
@@ -58,9 +64,31 @@ public class Zone {
     }
 
     public void setInsideTemp(int temp){
-        climate.setTemp(temp);
+        try {climate.setTemp(temp);}
+        catch (ExceededTempException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
-
-
+    public boolean changeUser(User newUser, boolean update){
+        if (isDriver == true && user.drivePermission == false){return false;}
+        else {
+            if (update = true) {
+                updateUserSettings();
+            }
+            //not sure if we want to open the window for people
+            //setWindowPosition(newUser.settings[0]);
+            setSeat(newUser.settings[2], newUser.settings[3], newUser.settings[1]);
+            setInsideTemp(newUser.settings[4]);
+            user = newUser;
+            return true;
+        }
+    }
+    public void updateUserSettings(){
+        user.settings[0] = getWindowPosition();
+        user.settings[1] = getSeatRecline();
+        user.settings[2] = getSeatX();
+        user.settings[3] = getSeatY();
+        user.settings[4] = getInsideTemp();
+    }
 }
