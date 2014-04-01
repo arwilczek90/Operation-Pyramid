@@ -4,26 +4,28 @@ package SelfDrivingCar;
  * Created by awilczek on 3/18/14.
  */
 public class User {
-    private String name;
-    private boolean drivePermission = false;
-    private boolean windowPermission = true;
-
-    public class Settings {
+    public String name;
+    public boolean drivePermission = false;
+    public boolean windowPermission = true;
+    public int idNum;
+    public int[] settings = new int[5];
+   /*
         int windowPosition;
         int seatRecline;
         int seatX;
         int seatY;
         int insideTemp;
-    }
+    */
 
 
     public User(String newName){
-        public Settings prefs;
-        name = newName;
-    }
 
-    public void updatePrefs(){
-        prefs.windowPosition
+        settings[0] = 99;
+        settings[1] = 50;
+        settings[2] = 25;
+        settings[3] = 75;
+        settings[4] = 72;
+        name = newName;
     }
 
     public void setDriverPermission(boolean drive)
