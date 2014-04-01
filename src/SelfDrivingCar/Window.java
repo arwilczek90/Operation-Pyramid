@@ -28,6 +28,9 @@ public class Window {
     /**
      * Returns the location class variable
      */
+
+
+
     public String getLocation() {
         return location;
     }

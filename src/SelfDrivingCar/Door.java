@@ -4,7 +4,6 @@ package SelfDrivingCar;
  * Created by awilczek on 3/18/14.
  */
 public class Door {
-
     /**
      * The status of the door: locked, closed, or open
      */
@@ -14,6 +13,14 @@ public class Door {
      * The location of the door within the car: driver or passenger
      */
     private String location;
+
+    /**
+     * Constructor setting door location and lock status when created
+     */
+    public void Door(String doorLocation, String doorStatus){
+        location = doorLocation;
+        status = doorStatus;
+    }
 
     /**
      * Return status class variable
