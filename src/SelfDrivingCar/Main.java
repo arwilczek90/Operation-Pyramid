@@ -22,7 +22,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         //Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
+        primaryStage.setTitle("Operation Pyramid");
 
 
 
@@ -50,11 +50,23 @@ public class Main extends Application {
         });
 
 
+        Image road = new Image(getClass().getResourceAsStream("/SelfDrivingCar/road_view.png"));
+        ImageView roadView = new ImageView(road);
+        roadView.setTranslateX(-140.0);
+        roadView.setTranslateY(-10);
 
+        Image sidePane =  new Image(getClass().getResourceAsStream("/SelfDrivingCar/side_pane.png"));
+        ImageView sideView = new ImageView(sidePane);
+        sideView.setTranslateX(-480);
+        sideView.setTranslateY(-16);
+
+        //Image controls = new Image(getClass().getResourceAsStream("/SelfDrivingCar/side_pane.png"));
 
         StackPane root = new StackPane();
-        root.getChildren().add(button);
+        root.getChildren().add(roadView);
+        root.getChildren().add(sideView);
         root.setId("pane");
+
 
         Scene scene = new Scene(root,1280,768);
         scene.getStylesheets().add(this.getClass().getResource("style.css").toExternalForm());
