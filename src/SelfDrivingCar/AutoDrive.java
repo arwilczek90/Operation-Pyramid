@@ -20,7 +20,7 @@ public class AutoDrive {
         this.autoD = autoD;
     }
 
-    public void navTo(Navigation dest){ //take destination
+    public void navTo(Navigation dest) { //take destination
         //this.dest = dest;
         //waiting for Navigation class to be completed
     }
@@ -32,4 +32,24 @@ public class AutoDrive {
     public void setNavStat(boolean x) { //to display, or not to display Nav
         displayNav = x;
     }
+
+
+
+public void turn(int angle){}
+public void speed(int speed){}
+public void park(){}
+public void intersection(){}
+
+private void accelerate(){}
+private int getGear(){return 1;}
+private void turnWheels(){}
+private void setGear(int gear){}
+private void decelerate(){}
+private void stop(){}
+private int getSpeed(){return 100;}
+private void setSpeed(int speed){}
+private boolean checkAhead(){return false;}
+private boolean checkSides(){return false;}
+private boolean detectIntersectionState(){return false;}
+
 }

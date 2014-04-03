@@ -27,8 +27,8 @@ public class Zone {
         return window.getLocation();
     }
 
-    public int getWindowPosition(){
-        return window.getPosition();
+    public int getWindowTint(){
+        return window.getTint();
     }
 
     public int getSeatRecline(){
@@ -55,8 +55,8 @@ public class Zone {
         window.setLocation(location);
     }
 
-    public void setWindowPosition(int position){
-        window.setPosition(position);
+    public void setWindowTint(int darkness){
+        window.setTint(darkness);
     }
 
     public void setSeat(int x, int y, int recline){
@@ -77,7 +77,7 @@ public class Zone {
                 updateUserSettings();
             }
             //not sure if we want to open the window for people
-            //setWindowPosition(newUser.settings[0]);
+            setWindowTint(newUser.settings[0]);
             setSeat(newUser.settings[2], newUser.settings[3], newUser.settings[1]);
             setInsideTemp(newUser.settings[4]);
             user = newUser;
@@ -85,7 +85,7 @@ public class Zone {
         }
     }
     public void updateUserSettings(){
-        user.settings[0] = getWindowPosition();
+        user.settings[0] = getWindowTint(99);
         user.settings[1] = getSeatRecline();
         user.settings[2] = getSeatX();
         user.settings[3] = getSeatY();

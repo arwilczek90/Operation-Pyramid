@@ -10,7 +10,7 @@ public class User {
     public int idNum;
     public int[] settings = new int[5];
    /*
-        int windowPosition;
+        int windowTint;
         int seatRecline;
         int seatX;
         int seatY;
