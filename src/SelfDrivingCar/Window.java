@@ -16,6 +16,11 @@ public class Window {
     private int position;
 
     /**
+     * Level of window tinting
+     */
+    private int tint;
+
+    /**
      * Constructor method
      *
      * @param   winLocation     The location of the window within the car.
@@ -23,14 +28,12 @@ public class Window {
     public void Window( String winLocation ) {
         this.location = winLocation;
         this.position = 99;
+        this.tint = 30;
     }
 
     /**
      * Returns the location class variable
      */
-
-
-
     public String getLocation() {
         return location;
     }
@@ -40,6 +43,13 @@ public class Window {
      */
     public int getPosition() {
         return position;
+    }
+
+    /**
+     * Returns the tint class variable
+     */
+    public int getTint() {
+        return tint;
     }
 
     /**
@@ -59,6 +69,13 @@ public class Window {
     public void setPosition(int windowPosition) {
         this.position = windowPosition;
     }
+
+    /**
+     * Sets the window tint level
+     *
+     * @param   newTint
+     */
+    public void setTint(int newTint) { this.tint = newTint; }
 
     /**
      * Increases the position class variable
