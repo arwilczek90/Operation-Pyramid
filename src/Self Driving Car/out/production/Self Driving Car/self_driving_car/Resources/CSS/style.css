@@ -1,6 +1,6 @@
 
     #pane{
-        -fx-background-image: url("pyramid_bg.png");
+        -fx-background-color:#dcdcdc;
         -fx-background-repeat: stretch;   
         -fx-background-size: 1280 768;
         -fx-background-position: center center;
