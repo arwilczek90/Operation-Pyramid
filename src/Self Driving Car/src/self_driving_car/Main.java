@@ -21,45 +21,41 @@ public class Main extends Application {
 
 
 
-        Image buttonUnselected = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/rounded_button.png"));
-        final Button button = new Button();
-        button.setGraphic(new ImageView(buttonUnselected));
-        button.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+//        Image buttonUnselected = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/rounded_button.png"));
+//        final Button button = new Button();
+//        button.setGraphic(new ImageView(buttonUnselected));
+//        button.setStyle("-fx-background-color: transparent; -fx-text-fill: white;");
+//
+//
+//        button.setOnMousePressed(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent mouseEvent) {
+//                System.out.println("click");
+//                Image clicked = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/rounded_button_selected.png"));
+//                button.setGraphic(new ImageView(clicked));
+//            }
+//        });
+//        button.setOnMouseReleased(new EventHandler<MouseEvent>() {
+//            @Override
+//            public void handle(MouseEvent mouseEvent) {
+//                System.out.println("click");
+//                Image clicked = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/rounded_button.png"));
+//                button.setGraphic(new ImageView(clicked));
+//            }
+//        });
+//
+//
+//        Image road = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/road_view.png"));
+//        ImageView roadView = new ImageView(road);
+//        roadView.setTranslateX(-140.0);
+//        roadView.setTranslateY(-10);
+//
 
-
-        button.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                System.out.println("click");
-                Image clicked = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/rounded_button_selected.png"));
-                button.setGraphic(new ImageView(clicked));
-            }
-        });
-        button.setOnMouseReleased(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                System.out.println("click");
-                Image clicked = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/rounded_button.png"));
-                button.setGraphic(new ImageView(clicked));
-            }
-        });
-
-
-        Image road = new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/road_view.png"));
-        ImageView roadView = new ImageView(road);
-        roadView.setTranslateX(-140.0);
-        roadView.setTranslateY(-10);
-
-        Image sidePane =  new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/side_pane.png"));
-        ImageView sideView = new ImageView(sidePane);
-        sideView.setTranslateX(-480);
-        sideView.setTranslateY(-16);
-
-        //Image controls = new Image(getClass().getResourceAsStream("/SelfDrivingCar/side_pane.png"));
-
+        Image windowBackgroundImage =  new Image(getClass().getResourceAsStream("/self_driving_car/Resources/Images/window-background.png"));
+        ImageView windowBackground = new ImageView(windowBackgroundImage);
+        windowBackground.rec
         StackPane root = new StackPane();
-        root.getChildren().add(roadView);
-        root.getChildren().add(sideView);
+        root.getChildren().add(windowBackground);
         root.setId("pane");
 
 
