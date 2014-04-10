@@ -4,56 +4,25 @@ package SelfDrivingCar;
  * Created by awilczek on 3/18/14.
  */
 import java.util.*;
-import java.lang.*;
+
 
 public class AutoDrive {
-    private boolean autoD;
-    private boolean displayNav;
     private int throttleTension = 0;
     private int brakeTension = 0;
     private int speed;
     private int actualSpeed;
     private Random gen = new Random();
-    //private Navigation dest; Waiting for Navigation class to be comepleted
-
-    public void AutoDrive() {
-        autoD = true; //
-    }
-
-    public boolean isAuto() { //for User class to use checking if in Auto Drive
-        return autoD;
-    }
-
-    public void setDriveMode(boolean autoD) {
-        this.autoD = autoD;
-    }
-
-    public void navTo(Navigation dest) { //take destination
-        //this.dest = dest;
-        //waiting for Navigation class to be completed
-    }
-
-    public boolean navStatus() { //returns Navigation Status to show Nav or not
-        return displayNav;
-    }
-
-    public void setNavStat(boolean x) { //to display, or not to display Nav
-        displayNav = x;
-    }
-
-
 
 public void turn(int angle){
     int car = carAngle();
     int goal = carAngle() + angle;
-    while (car < goal){
-        if(angle > 0){
-            turnWheels(false);
+        while (car < goal) {
+            if (angle > 0) {
+                turnWheels(false);
+            } else {
+                turnWheels(true);
+            }
         }
-        else {
-            turnWheels(true);
-        }
-    }
 }
 public void speed(int s){
     speed = s;
