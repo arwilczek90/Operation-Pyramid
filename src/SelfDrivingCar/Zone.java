@@ -85,7 +85,7 @@ public class Zone {
         }
     }
     public void updateUserSettings(){
-        user.settings[0] = getWindowTint(99);
+        user.settings[0] = getWindowTint();
         user.settings[1] = getSeatRecline();
         user.settings[2] = getSeatX();
         user.settings[3] = getSeatY();

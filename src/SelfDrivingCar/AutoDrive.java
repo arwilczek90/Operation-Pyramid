@@ -52,7 +52,7 @@ private int carAngle(){
 }
 
 //Speed handling
-private int getSpeed(){
+public int getSpeed(){
     actualSpeed = actualSpeed + gen.nextInt(6) - 3;
     return actualSpeed;
 }
