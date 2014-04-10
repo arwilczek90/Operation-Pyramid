@@ -20,7 +20,7 @@ public class ManualDrive {
     }
 
     public void navTo(Navigation dest){ //take destination
-        //Navigation destination = dest; Waiting for Navigation class to be comepleted
+        //Navigation destination = dest; Waiting for Navigation class to be completed
         //waiting for Navigation class to be completed
     }
 
