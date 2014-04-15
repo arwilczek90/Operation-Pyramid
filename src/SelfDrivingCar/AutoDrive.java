@@ -87,13 +87,7 @@ private void stop(){
 }
 
 
-
-private int getGear(){return 1;}
-private void turnWheels(){}
-private void setGear(int gear){}
-private void setSpeed(int speed){}
 private boolean checkAhead(){return false;}
-private boolean checkSides(){return false;}
 private boolean detectIntersectionState(){
     //hardware
     return false;
