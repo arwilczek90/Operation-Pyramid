@@ -32,7 +32,9 @@ public class Navigation {
      */
     double currentLong;
 
-
+    /**
+     * Sets class variables
+     */
     public void Navigation() {
 
         gps         = new GPS();
@@ -97,22 +99,6 @@ public class Navigation {
     } // End of updatePosition()
 
     /**
-     * Returns the next step from Google Directions
-      */
-    public void getNextStep() {
-
-        //return gps.getNext();
-
-    } // End of getNextStep()
-
-
-
-
-
-
-
-
-    /**
      * Sets the new speed
      *
      * @param   newSpeed
@@ -124,59 +110,40 @@ public class Navigation {
     } // End of setSpeed
 
     /**
+     * Returns the next step text from directions
+      */
+    public String getNextStep() {
+
+        Direction dirStep = gps.getNext();
+
+        return dirStep.getInstruction();
+
+    } // End of getNextStep()
+
+    /**
      * Returns the distance (in miles) to next turn
      *
      * @return  double      distanceToNextTurn
      */
-    public void getDistanceToNextTurn() {
+    public double getDistanceToNextTurn() {
 
-       // double distance;
+        Direction dirStep = gps.getCurrentStep();
 
-//        distance = gps.
-
-        //double distance;
-        //double turnLat;
-        //double turnLong;
-
-
-
-
-
-        // get the distance from the directions
-        // calculate from currentLat & currentLong?
-
-        //return distance;
-
-        return;
+        return dirStep.getDistance();
 
     } // End of getDistanceToNextTurn()
 
     /**
-     * Loops through distance to next turn until it is less than or equal to 50 meters away
-     * Then it calls Autodrive's intersection method to check the intersection ahead
+     * Returns the (approx) minutes to next turn
+     *
+     * @return  double
      */
-    public void driving() {
+    public double getDurationToNextTurn() {
 
-        double distanceToNextTurn = 0;
-        boolean clear;
+        Direction dirStep = gps.getCurrentStep();
 
-        do {
+        return dirStep.getDuration();
 
-            //distanceToNextTurn = getDistanceToNextTurn();
-            //Thread.sleep(1000);
-
-        } while ( distanceToNextTurn > 50 );
-
-        autodrive.intersection();
-
-
-    } // End of driving()
-
-
-    // Autodrive commands
-
-    // turn( String: left / right )
-    // setSpeed( int )
-    // park
+    } // End of getDurationToNextTurn()
 
 } // End of Navigation class

@@ -25,9 +25,9 @@ public class GPS {
     private Date eta;
 
     /**
-     * A LinkedList of directions
+     * An array of Direction objects
      */
-    private LinkedList<Direction> directions;
+    private Queue<Direction> directions;
 
     /**
      * A random generator
@@ -40,7 +40,7 @@ public class GPS {
     public void GPS() {
 
         r = new Random();
-        directions = new LinkedList();
+        directions = new LinkedList<Direction>();
 
     } // End of GPS()
 
@@ -87,27 +87,39 @@ public class GPS {
     }
 
     /**
-     * Returns a LinkedList of direction instructions
+     * Returns a queue of direction instructions
      *
-     * @return  LinkedList  A LinkedList of direction instructions
+     * @return  Queue<Direction>  A queue of direction instructions
      */
-    public LinkedList getDirections() {
+    public Queue<Direction> getDirections() {
 
         return directions;
 
     } // End of getDirections()
 
     /**
-     * Returns the next direction instruction
+     * Returns the next direction object
      *
-     * @return  String
+     * @return  object
      */
-    public void getNext() {
+    public Direction getNext() {
 
-        // Returns the next direction from the LinkedList
-        //return; // dirstep.step;
+        directions.remove();
+
+        return directions.peek();
 
     } // End of getNext()
+
+    /**
+     * Returns the current Direction object
+     *
+     * @return  object
+     */
+    public Direction getCurrentStep() {
+
+        return directions.peek();
+
+    } // End of getCurrentStep();
 
     public double getLatitude() {
         return 86 + (87 - 86) * r.nextDouble();
@@ -118,32 +130,19 @@ public class GPS {
     }
 
     /**
-     * Creates a LinkedList of Direction objects
+     * Adds Direction objects to the directions array
      *
      * @return  void
      */
     public void setDirections() {
 
-        Direction step1 = new Direction( "Head west on Acklen Ave toward 17th Ave S", 160.934, .3 );
-        directions.add(step1);
-
-        Direction step2 = new Direction( "Turn right onto 18th Ave S", 28.0416, .1 );
-        directions.add(step2);
-
-        Direction step3 = new Direction( "Take the 1st right onto Magnolia Blvd", 160.934, .3 );
-        directions.add(step3);
-
-        Direction step4 = new Direction( "Take the 1st right onto Wedgewood Ave", 643.738, .5 );
-        directions.add(step4);
-
-        Direction step5 = new Direction( "Turn left onto 12th Ave S", 804.672, .7 );
-        directions.add(step5);
-
-        Direction step6 = new Direction( "Turn right onto Edgehill Ave", 804.672, .7 );
-        directions.add(step6);
-
-        Direction step7 = new Direction( "Turn left onto 8th Ave S", 965.606, .8 );
-        directions.add(step7);
+        directions.add( new Direction( "Head west on Acklen Ave toward 17th Ave S", 160.934, .3 ) );
+        directions.add( new Direction( "Turn right onto 18th Ave S", 28.0416, .1 ) );
+        directions.add( new Direction( "Take the 1st right onto Magnolia Blvd", 160.934, .3 ) );
+        directions.add( new Direction( "Take the 1st right onto Wedgewood Ave", 643.738, .5 ) );
+        directions.add( new Direction( "Turn left onto 12th Ave S", 804.672, .7 ) );
+        directions.add( new Direction( "Turn right onto Edgehill Ave", 804.672, .7 ) );
+        directions.add( new Direction( "Turn left onto 8th Ave S", 965.606, .8 ) );
 
     }
 
