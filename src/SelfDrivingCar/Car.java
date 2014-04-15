@@ -4,6 +4,8 @@ import java.sql.*;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Random;
+
 import org.sqlite.JDBC;
 
 /**
@@ -67,11 +69,21 @@ public class Car {
 
         try
         {
-            Runnable r = new Runnable() {
+            Runnable r = new Runnable()  {
                 public void run() {
                     while(true)
                     {
-                        ret.rpm = auto.
+                        Random rand = new Random();
+                        ret.speed = auto.getSpeed();
+                        ret.rpm = rand.nextInt();
+                        try {
+                            Thread.sleep(100);
+                        }
+                        catch(InterruptedException e)
+                        {
+
+                        }
+                        System.out.println(getInfo().toString());
 
                     }
                 }
