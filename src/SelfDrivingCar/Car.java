@@ -195,6 +195,125 @@ public class Car {
         return ret;
     }
 
+    private void zone1WindowUp(){
+        zone1.windowUp();
+    }
+    private void zone2WindowUp(){
+        zone2.windowUp();
+    }
+    private void zone1WindowDown(){
+        zone1.windowDown();
+    }
+    private void zone2WindowDown(){
+        zone2.windowDown();
+    }
 
+    private void zone1Xup(){
+        int x = zone1.getSeatX();
+        int y = zone1.getSeatY();
+        int r = zone1.getSeatRecline();
+        zone1.setSeat(x++, y, r);
+    }
+    private void zone1Yup(){
+        int x = zone1.getSeatX();
+        int y = zone1.getSeatY();
+        int r = zone1.getSeatRecline();
+        zone1.setSeat(x, y++, r);
+    }
+    private void zone1Rup(){
+        int x = zone1.getSeatX();
+        int y = zone1.getSeatY();
+        int r = zone1.getSeatRecline();
+        zone1.setSeat(x, y, r++);
+    }
+
+    private void zone1XDown(){
+        int x = zone1.getSeatX();
+        int y = zone1.getSeatY();
+        int r = zone1.getSeatRecline();
+        zone1.setSeat(x--, y, r);
+    }
+    private void zone1YDown(){
+        int x = zone1.getSeatX();
+        int y = zone1.getSeatY();
+        int r = zone1.getSeatRecline();
+        zone1.setSeat(x, y--, r);
+    }
+    private void zone1RDown(){
+        int x = zone1.getSeatX();
+        int y = zone1.getSeatY();
+        int r = zone1.getSeatRecline();
+        zone1.setSeat(x, y, r--);
+    }
+    private void zone2Xup(){
+        int x = zone2.getSeatX();
+        int y = zone2.getSeatY();
+        int r = zone2.getSeatRecline();
+        zone2.setSeat(x++, y, r);
+    }
+    private void zone2Yup(){
+        int x = zone2.getSeatX();
+        int y = zone2.getSeatY();
+        int r = zone2.getSeatRecline();
+        zone2.setSeat(x, y++, r);
+    }
+    private void zone2Rup(){
+        int x = zone2.getSeatX();
+        int y = zone2.getSeatY();
+        int r = zone2.getSeatRecline();
+        zone2.setSeat(x, y, r++);
+    }
+
+    private void zone2XDown(){
+        int x = zone2.getSeatX();
+        int y = zone2.getSeatY();
+        int r = zone2.getSeatRecline();
+        zone2.setSeat(x--, y, r);
+    }
+    private void zone2YDown(){
+        int x = zone2.getSeatX();
+        int y = zone2.getSeatY();
+        int r = zone2.getSeatRecline();
+        zone2.setSeat(x, y--, r);
+    }
+    private void zone2RDown() {
+        int x = zone2.getSeatX();
+        int y = zone2.getSeatY();
+        int r = zone2.getSeatRecline();
+        zone2.setSeat(x, y, r--);
+    }
+
+    private void zone1tintUp(){
+        zone1.setWindowTint(zone1.getWindowTint()+1);
+    }
+    private void zone2tintUp(){
+        zone2.setWindowTint(zone2.getWindowTint()+1);
+    }
+    private void zone1tintDown(){
+        zone1.setWindowTint(zone1.getWindowTint()-1);
+    }
+    private void zone2tintDown(){
+        zone2.setWindowTint(zone2.getWindowTint()-1);
+    }
+
+    private void zone1tempUp(){
+        zone1.setInsideTemp(zone1.getInsideTemp()+1);
+    }
+    private void zone2tempUp(){
+        zone2.setInsideTemp(zone2.getInsideTemp()+1);
+    }
+    private void zone1tempDown(){
+        zone1.setInsideTemp(zone1.getInsideTemp()-1);
+    }
+    private void zone2tempDown(){
+        zone2.setInsideTemp(zone2.getInsideTemp()-1);
+    }
+
+    private void updateZone1User(){
+        zone1.updateUserSettings();
+    }
+    private void updateZone2User(){
+        zone2.updateUserSettings();
+    }
 
 }

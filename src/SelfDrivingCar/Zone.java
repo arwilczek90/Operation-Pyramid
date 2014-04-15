@@ -63,6 +63,10 @@ public class Zone {
         seat.setX_Y_R(x, y, recline);
     }
 
+    public void windowUp(){window.windowUp();}
+
+    public void windowDown(){window.windowDown();}
+
     public void setInsideTemp(int temp){
         try {climate.setTemp(temp);}
         catch (ExceededTempException e) {
