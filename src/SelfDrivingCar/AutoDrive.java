@@ -46,7 +46,7 @@ private void turnWheels(){}
 private void setGear(int gear){}
 private void decelerate(){}
 private void stop(){}
-private int getSpeed(){return 100;}
+public int getSpeed(){return 100;}
 private void setSpeed(int speed){}
 private boolean checkAhead(){return false;}
 private boolean checkSides(){return false;}
